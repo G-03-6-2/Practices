@@ -15,10 +15,6 @@ class AppTestCase(unittest.TestCase):
 
     def test_is_prime(self):
         # is prime 
-        # rm -rf simple-api-robot
-        # git clone https://github.com/G-03-6-2/Practices.git
-        # cd Practices
-        # robot test-calculate.robot
         res = app.is_prime(13219)
         self.assertEqual(res, "True")
 
