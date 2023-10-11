@@ -48,7 +48,7 @@ Test Hello, Supamit
 
     ${resp}=     Get Hello Name    Supamit
 
-    Should Be Equal  ${resp.text}    hello, Supamit
+    Should Be Equal  ${resp}    hello, Supamit
 
 Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
 
@@ -153,10 +153,10 @@ Test false when x is 36
 
     ${resp}=     Get Is Prime    $number=36
 
-    Should Be Equal    ${resp.text}    False
+    Should Be Equal    ${resp}    False
 
 Test false when x is 13219
 
     ${resp}=     Get Is Prime    $number=13219
 
-    Should Be Equal    ${resp.text}    True
+    Should Be Equal    ${resp}    True
