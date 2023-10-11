@@ -16,7 +16,7 @@ Get Calculation JSON
 
 Get Hello Name
     [Arguments]    ${name}
-    ${resp}=     GET    http://127.0.0.1:5000/hello/${num1}
+    ${resp}=     GET    http://127.0.0.1:5000/hello/${name}
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
@@ -24,6 +24,15 @@ Get Hello Name
     # Get the response content as a JSON object
     [return]    ${resp.text}
 
+Get Is Prime
+    [Arguments]    ${number}
+    ${resp}=     GET    http://127.0.0.1:5000/is_prime/${number}
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Get the response content as a JSON object
+    [return]    ${resp.text}
 
 *** Test Cases ***
 Test Hello, Anuwat (ฺBefore Using Keywords)
@@ -140,20 +149,14 @@ Test true when x is 17 (ฺBefore Using Keywords)
 
     Should Be Equal  ${resp.text}    True
 
-Test false when x is 36 (ฺBefore Using Keywords)
+Test false when x is 36
 
-    ${resp}=     GET    http://127.0.0.1:5000/is_prime/36
-
-    # Verify the status code is 200 (OK)
-    Should Be Equal    ${resp.status_code}    ${200}
+    ${resp}=     Get Is Prime    $number=36
 
     Should Be Equal    ${resp.text}    False
 
-Test false when x is 13219 (ฺBefore Using Keywords)
+Test false when x is 13219
 
-    ${resp}=     GET    http://127.0.0.1:5000/is_prime/13219
-
-    # Verify the status code is 200 (OK)
-    Should Be Equal    ${resp.status_code}    ${200}
+    ${resp}=     Get Is Prime    $number=13219
 
     Should Be Equal    ${resp.text}    True
