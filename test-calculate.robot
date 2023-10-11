@@ -103,7 +103,7 @@ Get Is Prime JSON
     Should Be Equal    ${resp.status_code}    ${200}
 
     # Get the response content as a JSON object
-    [return]    ${resp}
+    [return]    ${resp.json()}
 
 Test Is Prime Numbers 1 (ฺBefore Using Keywords)
 
@@ -116,4 +116,17 @@ Test Is Prime Numbers 1 (ฺBefore Using Keywords)
     ${json_resp}=    Set Variable  ${resp.json()}
 
     # Verify the response of plus operation
-    Should Be Equal    ${json_resp}    ${False}
+    Should Be Equal    ${json_resp.['is_prime']}    ${False}
+
+Test Is Prime Numbers 2 (ฺBefore Using Keywords)
+
+    ${resp}=     GET    http://127.0.0.1:5000/is_prime/2
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Get the response content as a JSON object
+    ${json_resp}=    Set Variable  ${resp.json()}
+
+    # Verify the response of plus operation
+    Should Be Equal    ${json_resp.['is_prime']}    ${True}
