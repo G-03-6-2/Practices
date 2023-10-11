@@ -95,16 +95,6 @@ Test Calculate Numbers 8.4 and 4
     # Verify the response of divide operation
     Should Be Equal    ${json_resp['divide']}    ${2.1}
 
-Get Is Prime JSON
-    [Arguments]    ${number}
-    ${resp}=     GET    http://127.0.0.1:5000/is_prime/${number}
-
-    # Verify the status code is 200 (OK)
-    Should Be Equal    ${resp.status_code}    ${200}
-
-    # Get the response content as a JSON object
-    [return]    ${resp.json()}
-
 Test Is Prime Numbers 1 (ฺBefore Using Keywords)
 
     ${resp}=     GET    http://127.0.0.1:5000/is_prime/1
@@ -112,11 +102,8 @@ Test Is Prime Numbers 1 (ฺBefore Using Keywords)
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
 
-    # Get the response content as a JSON object
-    ${json_resp}=    Set Variable  ${resp.json()}
-
     # Verify the response of plus operation
-    Should Be Equal    ${json_resp.['is_prime']}    ${False}
+    Should Be Equal    ${json_resp.text}    "False"
 
 Test Is Prime Numbers 2 (ฺBefore Using Keywords)
 
@@ -125,8 +112,5 @@ Test Is Prime Numbers 2 (ฺBefore Using Keywords)
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
 
-    # Get the response content as a JSON object
-    ${json_resp}=    Set Variable  ${resp.json()}
-
     # Verify the response of plus operation
-    Should Be Equal    ${json_resp.['is_prime']}    ${True}
+    Should Be Equal    ${json_resp.text}    "True"
