@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.10.0 on win32)" generated="20231012 01:01:52.058" rpa="false" schemaversion="4">
+<suite id="s1" name="Test-Calculate" source="c:\Users\tode_\OneDrive\Documents\GitHub\Practices\test-calculate.robot">
+<test id="s1-t1" name="Test true when x is 1 (ฺBefore Using Keywords)" line="107">
+<kw name="GET">
+<var>${resp}</var>
+<arg>http://127.0.0.1:5000/is_prime/1</arg>
+<msg timestamp="20231012 01:01:52.275" level="FAIL">No keyword with name 'GET' found. Did you mean:
+    BuiltIn.Get Time</msg>
+<status status="FAIL" starttime="20231012 01:01:52.275" endtime="20231012 01:01:52.277"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20231012 01:01:52.278" endtime="20231012 01:01:52.279"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp.text}</arg>
+<arg>False</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20231012 01:01:52.287" endtime="20231012 01:01:52.288"/>
+</kw>
+<status status="FAIL" starttime="20231012 01:01:52.266" endtime="20231012 01:01:52.290">No keyword with name 'GET' found. Did you mean:
+    BuiltIn.Get Time</status>
+</test>
+<status status="FAIL" starttime="20231012 01:01:52.135" endtime="20231012 01:01:52.292"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test-Calculate">Test-Calculate</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231012 01:01:52.241" level="ERROR">Error in file 'c:\Users\tode_\OneDrive\Documents\GitHub\Practices\test-calculate.robot' on line 2: Importing library 'RequestsLibrary' failed: ModuleNotFoundError: No module named 'RequestsLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  c:\Users\tode_\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_debug_adapter
+  C:\Users\tode_\OneDrive\Documents\GitHub\Practices
+  c:\Users\tode_\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src
+  c:\Users\tode_\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored
+  C:\Program Files\Python310\python310.zip
+  C:\Program Files\Python310\DLLs
+  C:\Program Files\Python310\lib
+  C:\Program Files\Python310
+  C:\Users\tode_\AppData\Roaming\Python\Python310\site-packages
+  C:\Program Files\Python310\lib\site-packages
+  C:\Program Files\Python310\lib\site-packages\vboxapi-1.0-py3.10.egg
+  C:\Program Files\Python310\lib\site-packages\win32
+  C:\Program Files\Python310\lib\site-packages\win32\lib
+  C:\Program Files\Python310\lib\site-packages\Pythonwin</msg>
+</errors>
+</robot>

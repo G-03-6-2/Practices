@@ -23,7 +23,7 @@ Test Hello, Anuwat (ฺBefore Using Keywords)
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
 
-    Should Be Equal  ${resp.text}    Hello, Anuwat
+    Should Be Equal  ${resp.text}    hello, Anuwat
 
 Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
 
@@ -46,6 +46,8 @@ Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
 
     # Verify the response of divide operation
     Should Be Equal    ${json_resp['divide']}    ${1}
+
+    Should Be Empty    ${json_resp['mod']}    ${0}
 
 
 Test Calculate Numbers 8.4 and 4 (ฺBefore Using Keywords)
