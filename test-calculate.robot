@@ -102,8 +102,10 @@ Test Is Prime Numbers 1 (ฺBefore Using Keywords)
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
 
+    Convert To Boolean  ${resp.text}  ${is_prime}
+
     # Verify the response of plus operation
-    Should Be Equal    ${resp.text}    ${False}
+    Should Be False    ${is_prime}
 
 Test Is Prime Numbers 2 (ฺBefore Using Keywords)
 
@@ -112,5 +114,7 @@ Test Is Prime Numbers 2 (ฺBefore Using Keywords)
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
 
+    Convert To Boolean  ${resp.text}  ${is_prime}
+
     # Verify the response of plus operation
-    Should Be Equal    ${resp.text}    ${True}
+    Should Be True    ${is_prime}
