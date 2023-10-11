@@ -8,3 +8,8 @@
 
 ### Run Unittest
 `python -m unit_test`
+
+# Robot Framwork for Simple API
+
+### Run Robot
+`robot test-calculate.robot`
