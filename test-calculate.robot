@@ -18,7 +18,7 @@ Get Calculation JSON
 *** Test Cases ***
 Test Calculate Numbers 4 and 2 (ฺBefore Using Keywords)
 
-    ${resp}=     GET    http://172.20.10.5:5000/calculate/4/2
+    ${resp}=     GET    http://172.20.10.5:5000/calculate/20/20
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
@@ -27,16 +27,16 @@ Test Calculate Numbers 4 and 2 (ฺBefore Using Keywords)
     ${json_resp}=    Set Variable  ${resp.json()}
 
     # Verify the response of plus operation
-    Should Be Equal    ${json_resp['plus']}    ${6}
+    Should Be Equal    ${json_resp['plus']}    ${40}
 
     # Verify the response of minus operation
-    Should Be Equal    ${json_resp['minus']}    ${2}
+    Should Be Equal    ${json_resp['minus']}    ${0}
 
     # Verify the response of multiply operation
-    Should Be Equal    ${json_resp['multiply']}    ${8}
+    Should Be Equal    ${json_resp['multiply']}    ${400}
 
     # Verify the response of divide operation
-    Should Be Equal    ${json_resp['divide']}    ${2}
+    Should Be Equal    ${json_resp['divide']}    ${1}
 
 
 Test Calculate Numbers 8.4 and 4 (ฺBefore Using Keywords)
