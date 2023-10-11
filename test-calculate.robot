@@ -102,7 +102,7 @@ Test Is Prime Numbers 1 (ฺBefore Using Keywords)
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
 
-    Should Be Equal  ${resp.text}    "False"
+    Should Be Equal  ${resp.text}    False
 
 Test Is Prime Numbers 2 (ฺBefore Using Keywords)
 
@@ -111,4 +111,4 @@ Test Is Prime Numbers 2 (ฺBefore Using Keywords)
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
 
-    Should Be Equal    ${resp.text}    "True"
+    Should Be Equal    ${resp.text}    True
