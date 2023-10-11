@@ -106,7 +106,7 @@ Test true when x is 1 (ฺBefore Using Keywords)
 
 Test true when x is 17 (ฺBefore Using Keywords)
 
-    ${resp}=     GET    http://127.0.0.1:5000/is_prime/1
+    ${resp}=     GET    http://127.0.0.1:5000/is_prime/17
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
@@ -115,7 +115,7 @@ Test true when x is 17 (ฺBefore Using Keywords)
 
 Test false when x is 36 (ฺBefore Using Keywords)
 
-    ${resp}=     GET    http://127.0.0.1:5000/is_prime/2
+    ${resp}=     GET    http://127.0.0.1:5000/is_prime/36
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
@@ -124,7 +124,7 @@ Test false when x is 36 (ฺBefore Using Keywords)
 
 Test false when x is 13219 (ฺBefore Using Keywords)
 
-    ${resp}=     GET    http://127.0.0.1:5000/is_prime/2
+    ${resp}=     GET    http://127.0.0.1:5000/is_prime/13219
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
