@@ -9,7 +9,7 @@ def index():
 
 @app.route('/hello/<name>', methods=['GET'])
 def hello(name):
-    return "hello, " + str(name)
+    return 100
 
 @app.route('/calculate/<num1>/<num2>', methods=['GET'])
 def calculate(num1, num2):
