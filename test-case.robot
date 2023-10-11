@@ -14,6 +14,16 @@ Get Calculation JSON
     # Get the response content as a JSON object
     [return]    ${resp.json()}
 
+Get Hello Name
+    [Arguments]    ${name}
+    ${resp}=     GET    http://127.0.0.1:5000/hello/${num1}
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Get the response content as a JSON object
+    [return]    ${resp.text}
+
 
 *** Test Cases ***
 Test Hello, Anuwat (ฺBefore Using Keywords)
@@ -24,6 +34,12 @@ Test Hello, Anuwat (ฺBefore Using Keywords)
     Should Be Equal    ${resp.status_code}    ${200}
 
     Should Be Equal  ${resp.text}    hello, Anuwat
+
+Test Hello, Supamit
+
+    ${resp}=     Get Hello Name    Supamit
+
+    Should Be Equal  ${resp.text}    hello, Supamit
 
 Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
 
