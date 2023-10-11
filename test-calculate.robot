@@ -104,7 +104,6 @@ Test Is Prime Numbers 1 (ฺBefore Using Keywords)
 
     ${is_prime}  Convert To Boolean  ${resp.text}
 
-    # Verify the response of plus operation
     Should Be False    ${is_prime}
 
 Test Is Prime Numbers 2 (ฺBefore Using Keywords)
@@ -116,5 +115,4 @@ Test Is Prime Numbers 2 (ฺBefore Using Keywords)
 
     ${is_prime}  Convert To Boolean  ${resp.text}
 
-    # Verify the response of plus operation
     Should Be True    ${is_prime}
