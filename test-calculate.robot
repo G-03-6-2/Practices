@@ -6,7 +6,7 @@ Library           RequestsLibrary
 
 Get Calculation JSON
     [Arguments]    ${num1}    ${num2}
-    ${resp}=     GET    http://172.20.10.5:5000/calculate/${num1}/${num2}
+    ${resp}=     GET    http://127.0.0.1:5000/calculate/${num1}/${num2}
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
@@ -18,7 +18,7 @@ Get Calculation JSON
 *** Test Cases ***
 Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
 
-    ${resp}=     GET    http://172.20.10.5:5000/calculate/20/20
+    ${resp}=     GET    http://127.0.0.1:5000/calculate/20/20
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
@@ -41,7 +41,7 @@ Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
 
 Test Calculate Numbers 8.4 and 4 (ฺBefore Using Keywords)
 
-    ${resp}=     GET    http://172.20.10.5:5000/calculate/8.4/4
+    ${resp}=     GET    http://127.0.0.1:5000/calculate/8.4/4
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
@@ -94,3 +94,16 @@ Test Calculate Numbers 8.4 and 4
 
     # Verify the response of divide operation
     Should Be Equal    ${json_resp['divide']}    ${2.1}
+
+Test Is Prime Numbers 1 (ฺBefore Using Keywords)
+
+    ${resp}=     GET    http://127.0.0.1:5000/is_prime/1
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    # Get the response content as a JSON object
+    ${json_resp}=    Set Variable  ${resp.json()}
+
+    # Verify the response of plus operation
+    Should Be Equal    ${json_resp}    ${False}
