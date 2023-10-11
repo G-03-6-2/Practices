@@ -103,7 +103,7 @@ Get Is Prime JSON
     Should Be Equal    ${resp.status_code}    ${200}
 
     # Get the response content as a JSON object
-    [return]    ${resp.json()}
+    [return]    ${resp}
 
 Test Is Prime Numbers 1 (ฺBefore Using Keywords)
 
