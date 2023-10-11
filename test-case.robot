@@ -151,12 +151,12 @@ Test true when x is 17 (ฺBefore Using Keywords)
 
 Test false when x is 36
 
-    ${resp}=     Get Is Prime    $number=36
+    ${resp}=     Get Is Prime    ${36}
 
     Should Be Equal    ${resp}    False
 
 Test false when x is 13219
 
-    ${resp}=     Get Is Prime    $number=13219
+    ${resp}=     Get Is Prime    ${13219}
 
     Should Be Equal    ${resp}    True
