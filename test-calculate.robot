@@ -96,14 +96,14 @@ Test Calculate Numbers 8.4 and 4
     Should Be Equal    ${json_resp['divide']}    ${2.1}
 
 Get Is Prime JSON
-    [Arguments]    ${num1}    ${num2}
+    [Arguments]    ${number}
     ${resp}=     GET    http://127.0.0.1:5000/is_prime/${number}
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
 
     # Get the response content as a JSON object
-    [return]    ${resp.json()}
+    [return]    ${resp}
 
 Test Is Prime Numbers 1 (ฺBefore Using Keywords)
 
