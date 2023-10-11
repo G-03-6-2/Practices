@@ -36,7 +36,7 @@ def calculate(num1, num2):
 def is_prime(number):
     number = int(number)
     if number <= 1:
-        return "False"
+        return False
     if number <= 3:
         return "True"
     if number % 2 == 0 or number % 3 == 0:

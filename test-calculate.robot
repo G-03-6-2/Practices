@@ -95,16 +95,34 @@ Test Calculate Numbers 8.4 and 4
     # Verify the response of divide operation
     Should Be Equal    ${json_resp['divide']}    ${2.1}
 
-Test Is Prime Numbers 1 (ฺBefore Using Keywords)
+Test true when x is 1 (ฺBefore Using Keywords)
 
     ${resp}=     GET    http://127.0.0.1:5000/is_prime/1
 
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
 
-    Should Be Equal  ${resp.text}    False
+    Should Be Equal  ${resp.text}    ${False}
 
-Test Is Prime Numbers 2 (ฺBefore Using Keywords)
+Test true when x is 17 (ฺBefore Using Keywords)
+
+    ${resp}=     GET    http://127.0.0.1:5000/is_prime/1
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    Should Be Equal  ${resp.text}    True
+
+Test false when x is 36 (ฺBefore Using Keywords)
+
+    ${resp}=     GET    http://127.0.0.1:5000/is_prime/2
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    Should Be Equal    ${resp.text}    False
+
+Test false when x is 13219 (ฺBefore Using Keywords)
 
     ${resp}=     GET    http://127.0.0.1:5000/is_prime/2
 
