@@ -16,7 +16,7 @@ Get Calculation JSON
 
 
 *** Test Cases ***
-Test Calculate Numbers 4 and 2 (ฺBefore Using Keywords)
+Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
 
     ${resp}=     GET    http://172.20.10.5:5000/calculate/20/20
 
@@ -62,18 +62,18 @@ Test Calculate Numbers 8.4 and 4 (ฺBefore Using Keywords)
     Should Be Equal    ${json_resp['divide']}    ${2.1}
 
 
-Test Calculate Numbers 4 and 2
+Test Calculate Numbers 40 and 20
 
-    ${json_resp}=    Get Calculation JSON    ${4}    ${2}
+    ${json_resp}=    Get Calculation JSON    ${40}    ${20}
 
     # Verify the response of plus operation
-    Should Be Equal    ${json_resp['plus']}    ${6}
+    Should Be Equal    ${json_resp['plus']}    ${60}
 
     # Verify the response of minus operation
-    Should Be Equal    ${json_resp['minus']}    ${2}
+    Should Be Equal    ${json_resp['minus']}    ${20}
 
     # Verify the response of multiply operation
-    Should Be Equal    ${json_resp['multiply']}    ${8}
+    Should Be Equal    ${json_resp['multiply']}    ${800}
 
     # Verify the response of divide operation
     Should Be Equal    ${json_resp['divide']}    ${2}
