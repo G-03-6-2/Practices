@@ -23,7 +23,7 @@ Test Hello, Anuwat (ฺBefore Using Keywords)
     # Verify the status code is 200 (OK)
     Should Be Equal    ${resp.status_code}    ${200}
 
-    Should Be Equal  ${resp.text}    100
+    Should Be Equal  ${resp.text}    hello, Anuwat
 
 Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
 

@@ -6,12 +6,12 @@ class AppTestCase(unittest.TestCase):
     def test_hello_with_string(self):
         # test hello add docker rm -f $(docker ps -aq) test
         res = app.hello("Group_3!")
-        self.assertEqual(res, 100)
+        self.assertEqual(res, "hello, Group_3!")
 
     def test_hello_with_number(self):
         # test hello
         res = app.hello(1)
-        self.assertEqual(res, 100)
+        self.assertEqual(res, "hello, 1")
 
     def test_is_prime(self):
         # is prime test 
