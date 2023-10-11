@@ -104,7 +104,7 @@ Test Is Prime Numbers 1 (ฺBefore Using Keywords)
 
     ${is_prime}  Convert To Boolean  ${resp.text}
 
-    Should Be True  ${is_prime} = ${False}
+    Should Be Equal  ${is_prime}    ${False}
 
 Test Is Prime Numbers 2 (ฺBefore Using Keywords)
 
