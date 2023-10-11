@@ -36,19 +36,19 @@ def calculate(num1, num2):
 def is_prime(number):
     number = int(number)
     if number <= 1:
-        return False
+        return "False"
     if number <= 3:
-        return True
+        return "True"
     if number % 2 == 0 or number % 3 == 0:
-        return False
+        return "False"
 
     i = 5
     while i * i <= number:
         if number % i == 0 or number % (i + 2) == 0:
-            return False
+            return "False"
         i += 6
 
-    return True
+    return "True"
 
 if __name__ == '__main__':
     app.run()
