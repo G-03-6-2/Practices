@@ -34,6 +34,7 @@ def calculate(num1, num2):
 
 @app.route('/is_prime/<number>', methods=['GET'])
 def is_prime(number):
+    number = int(number)
     if number <= 1:
         return False
     if number <= 3:

@@ -13,5 +13,10 @@ class AppTestCase(unittest.TestCase):
         res = app.hello(1)
         self.assertEqual(res, "hello, 1")
 
+    def test_is_prime(self):
+        # test hello
+        res = app.is_prime(13219)
+        self.assertEqual(res, "True")
+
 if __name__ == "__main__":
     unittest.main()
