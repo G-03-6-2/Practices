@@ -159,4 +159,8 @@ Test false when x is 13219
 
     ${resp}=     Get Is Prime    ${13219}
 
+<<<<<<< Updated upstream
     Should Be Equal    ${resp}    True
+=======
+    Should Be Equal    ${resp}    True
+>>>>>>> Stashed changes
