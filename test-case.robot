@@ -172,7 +172,7 @@ Test be 7 when x is 5 (ฺBefore Using Keywords)
 
 Test be neg3 when x is next5
 
-    ${resp}=     GET    http://127.0.0.1:5000/next/-5
+    ${resp}=     GET    http://127.0.0.1:5000/next2/-5
     Should Be Equal  ${resp.text}    7.0
 
 Test be -3 when x is -5 (ฺBefore Using Keywords)
@@ -182,7 +182,7 @@ Test be -3 when x is -5 (ฺBefore Using Keywords)
     Should Be Equal  ${resp.text}    -3
 
 Test be 5dot5 when x is 3dot5
-    ${resp}=     GET    http://127.0.0.1:5000/next/3.5
+    ${resp}=     GET    http://127.0.0.1:5000/next2/3.5
     Should Be Equal  ${resp.text}    -3.5
 
 Test be 5.5 when x is 3.5 (ฺBefore Using Keywords)
