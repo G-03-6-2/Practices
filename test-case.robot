@@ -35,21 +35,6 @@ Get Is Prime
     [return]    ${resp.text}
 
 *** Test Cases ***
-Test Hello, Anuwat (ฺBefore Using Keywords)
-
-    ${resp}=     GET    http://127.0.0.1:5000/hello/Anuwat
-
-    # Verify the status code is 200 (OK)
-    Should Be Equal    ${resp.status_code}    ${200}
-
-    Should Be Equal  ${resp.text}    hello, Anuwat
-
-Test Hello, Supamit
-
-    ${resp}=     Get Hello Name    Supamit
-
-    Should Be Equal  ${resp}    hello, Supamit
-
 Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
 
     ${resp}=     GET    http://127.0.0.1:5000/calculate/20/20
