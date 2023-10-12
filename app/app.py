@@ -52,7 +52,7 @@ def is_prime(number):
 
 @app.route('/next2/<num>', methods=['GET'])
 def is_next(num):
-    num = int(num)
+    num = float(num)
     if num == 0:
         return "2"
     else:
