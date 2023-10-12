@@ -56,7 +56,8 @@ def is_next(num):
     if num == 0:
         return "2"
     else:
-        return num + 2
+        num = str(num + 2)
+        return num
 
 if __name__ == '__main__':
     app.run()
