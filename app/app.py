@@ -50,5 +50,13 @@ def is_prime(number):
 
     return "True"
 
+@app.route('/next2/<num>', methods=['GET'])
+def is_next(num):
+    num = int(num)
+    if num == 0:
+        return "2"
+    else:
+        return num + 2
+
 if __name__ == '__main__':
     app.run()
