@@ -18,5 +18,15 @@ class AppTestCase(unittest.TestCase):
         res = app.is_prime(13219)
         self.assertEqual(res, "True")
 
+    def is_next(self):
+        # is number next test 
+        res = app.is_next(-5)
+        self.assertEqual(res, -3)
+
+    def is_next_dot(self):
+        # is number next dot test 
+        res = app.is_next(3.5)
+        self.assertEqual(res, 5.5)
+
 if __name__ == "__main__":
     unittest.main()
