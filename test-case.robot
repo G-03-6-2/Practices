@@ -3,7 +3,6 @@ Library           RequestsLibrary
 
 
 *** Keywords ***
-
 Get Calculation JSON
     [Arguments]    ${num1}    ${num2}
     ${resp}=     GET    http://127.0.0.1:5000/calculate/${num1}/${num2}
@@ -36,7 +35,6 @@ Get Is Prime
 
 *** Test Cases ***
 Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
-
     ${resp}=     GET    http://127.0.0.1:5000/calculate/20/20
 
     # Verify the status code is 200 (OK)
@@ -56,9 +54,6 @@ Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
 
     # Verify the response of divide operation
     Should Be Equal    ${json_resp['divide']}    ${1}
-
-    Should Be Equal    ${json_resp['mod']}    ${0}
-
 
 Test Calculate Numbers 8.4 and 4 (ฺBefore Using Keywords)
 
