@@ -35,131 +35,131 @@ Get Is Prime
     [return]    ${resp.text}
 
 *** Test Cases ***
-# Test Hello, Anuwat (ฺBefore Using Keywords)
+Test Hello, Anuwat (ฺBefore Using Keywords)
 
-#     ${resp}=     GET    http://127.0.0.1:5000/hello/Anuwat
+    ${resp}=     GET    http://127.0.0.1:5000/hello/Anuwat
 
-#     # Verify the status code is 200 (OK)
-#     Should Be Equal    ${resp.status_code}    ${200}
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
 
-#     Should Be Equal  ${resp.text}    hello, Anuwat
+    Should Be Equal  ${resp.text}    hello, Anuwat
 
-# Test Hello, Supamit
+Test Hello, Supamit
 
-#     ${resp}=     Get Hello Name    Supamit
+    ${resp}=     Get Hello Name    Supamit
 
-#     Should Be Equal  ${resp}    hello, Supamit
+    Should Be Equal  ${resp}    hello, Supamit
 
-# Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
+Test Calculate Numbers 20 and 20 (ฺBefore Using Keywords)
 
-#     ${resp}=     GET    http://127.0.0.1:5000/calculate/20/20
+    ${resp}=     GET    http://127.0.0.1:5000/calculate/20/20
 
-#     # Verify the status code is 200 (OK)
-#     Should Be Equal    ${resp.status_code}    ${200}
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
 
-#     # Get the response content as a JSON object
-#     ${json_resp}=    Set Variable  ${resp.json()}
+    # Get the response content as a JSON object
+    ${json_resp}=    Set Variable  ${resp.json()}
 
-#     # Verify the response of plus operation
-#     Should Be Equal    ${json_resp['plus']}    ${40}
+    # Verify the response of plus operation
+    Should Be Equal    ${json_resp['plus']}    ${40}
 
-#     # Verify the response of minus operation
-#     Should Be Equal    ${json_resp['minus']}    ${0}
+    # Verify the response of minus operation
+    Should Be Equal    ${json_resp['minus']}    ${0}
 
-#     # Verify the response of multiply operation
-#     Should Be Equal    ${json_resp['multiply']}    ${400}
+    # Verify the response of multiply operation
+    Should Be Equal    ${json_resp['multiply']}    ${400}
 
-#     # Verify the response of divide operation
-#     Should Be Equal    ${json_resp['divide']}    ${1}
+    # Verify the response of divide operation
+    Should Be Equal    ${json_resp['divide']}    ${1}
 
-#     Should Be Equal    ${json_resp['mod']}    ${0}
-
-
-# Test Calculate Numbers 8.4 and 4 (ฺBefore Using Keywords)
-
-#     ${resp}=     GET    http://127.0.0.1:5000/calculate/8.4/4
-
-#     # Verify the status code is 200 (OK)
-#     Should Be Equal    ${resp.status_code}    ${200}
-
-#     # Get the response content as a JSON object
-#     ${json_resp}=    Set Variable  ${resp.json()}
-
-#     # Verify the response of plus operation
-#     Should Be Equal    ${json_resp['plus']}    ${12.4}
-
-#     # Verify the response of minus operation
-#     Should Be Equal    ${json_resp['minus']}    ${4.4}
-
-#     # Verify the response of multiply operation
-#     Should Be Equal    ${json_resp['multiply']}    ${33.6}
-
-#     # Verify the response of divide operation
-#     Should Be Equal    ${json_resp['divide']}    ${2.1}
+    Should Be Equal    ${json_resp['mod']}    ${0}
 
 
-# Test Calculate Numbers 40 and 20
+Test Calculate Numbers 8.4 and 4 (ฺBefore Using Keywords)
 
-#     ${json_resp}=    Get Calculation JSON    ${40}    ${20}
+    ${resp}=     GET    http://127.0.0.1:5000/calculate/8.4/4
 
-#     # Verify the response of plus operation
-#     Should Be Equal    ${json_resp['plus']}    ${60}
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
 
-#     # Verify the response of minus operation
-#     Should Be Equal    ${json_resp['minus']}    ${20}
+    # Get the response content as a JSON object
+    ${json_resp}=    Set Variable  ${resp.json()}
 
-#     # Verify the response of multiply operation
-#     Should Be Equal    ${json_resp['multiply']}    ${800}
+    # Verify the response of plus operation
+    Should Be Equal    ${json_resp['plus']}    ${12.4}
 
-#     # Verify the response of divide operation
-#     Should Be Equal    ${json_resp['divide']}    ${2}
+    # Verify the response of minus operation
+    Should Be Equal    ${json_resp['minus']}    ${4.4}
+
+    # Verify the response of multiply operation
+    Should Be Equal    ${json_resp['multiply']}    ${33.6}
+
+    # Verify the response of divide operation
+    Should Be Equal    ${json_resp['divide']}    ${2.1}
 
 
-# Test Calculate Numbers 8.4 and 4
+Test Calculate Numbers 40 and 20
 
-#     ${json_resp}=    Get Calculation JSON    ${8.4}    ${4}
+    ${json_resp}=    Get Calculation JSON    ${40}    ${20}
 
-#     # Verify the response of plus operation
-#     Should Be Equal    ${json_resp['plus']}    ${12.4}
+    # Verify the response of plus operation
+    Should Be Equal    ${json_resp['plus']}    ${60}
 
-#     # Verify the response of minus operation
-#     Should Be Equal    ${json_resp['minus']}    ${4.4}
+    # Verify the response of minus operation
+    Should Be Equal    ${json_resp['minus']}    ${20}
 
-#     # Verify the response of multiply operation
-#     Should Be Equal    ${json_resp['multiply']}    ${33.6}
+    # Verify the response of multiply operation
+    Should Be Equal    ${json_resp['multiply']}    ${800}
 
-#     # Verify the response of divide operation
-#     Should Be Equal    ${json_resp['divide']}    ${2.1}
+    # Verify the response of divide operation
+    Should Be Equal    ${json_resp['divide']}    ${2}
 
-# Test true when x is 1 (ฺBefore Using Keywords)
 
-#     ${resp}=     GET    http://127.0.0.1:5000/is_prime/1
+Test Calculate Numbers 8.4 and 4
 
-#     # Verify the status code is 200 (OK)
-#     Should Be Equal    ${resp.status_code}    ${200}
+    ${json_resp}=    Get Calculation JSON    ${8.4}    ${4}
 
-#     Should Be Equal  ${resp.text}    False
+    # Verify the response of plus operation
+    Should Be Equal    ${json_resp['plus']}    ${12.4}
 
-# Test true when x is 17 (ฺBefore Using Keywords)
+    # Verify the response of minus operation
+    Should Be Equal    ${json_resp['minus']}    ${4.4}
 
-#     ${resp}=     GET    http://127.0.0.1:5000/is_prime/17
+    # Verify the response of multiply operation
+    Should Be Equal    ${json_resp['multiply']}    ${33.6}
 
-#     # Verify the status code is 200 (OK)
-#     Should Be Equal    ${resp.status_code}    ${200}
+    # Verify the response of divide operation
+    Should Be Equal    ${json_resp['divide']}    ${2.1}
 
-#     Should Be Equal  ${resp.text}    True
+Test true when x is 1 (ฺBefore Using Keywords)
 
-# Test false when x is 36
+    ${resp}=     GET    http://127.0.0.1:5000/is_prime/1
 
-#     ${resp}=     Get Is Prime    ${36}
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
 
-#     Should Be Equal    ${resp}    False
+    Should Be Equal  ${resp.text}    False
 
-# Test false when x is 13219
+Test true when x is 17 (ฺBefore Using Keywords)
 
-#     ${resp}=     Get Is Prime    ${13219}
+    ${resp}=     GET    http://127.0.0.1:5000/is_prime/17
 
-#     Should Be Equal    ${resp}    True
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    Should Be Equal  ${resp.text}    True
+
+Test false when x is 36
+
+    ${resp}=     Get Is Prime    ${36}
+
+    Should Be Equal    ${resp}    False
+
+Test false when x is 13219
+
+    ${resp}=     Get Is Prime    ${13219}
+
+    Should Be Equal    ${resp}    True
 
 Test be 7 when x is 5 (ฺBefore Using Keywords)
 
