@@ -160,7 +160,38 @@ Test false when x is 13219
     ${resp}=     Get Is Prime    ${13219}
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     Should Be Equal    ${resp}    True
 =======
     Should Be Equal    ${resp}    True
+>>>>>>> Stashed changes
+=======
+    Should Be Equal    ${resp}    True
+
+Test be 7 when x is 5 (ฺBefore Using Keywords)
+
+    ${resp}=     GET    http://127.0.0.1:5000/next2/5
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    Should Be Equal  ${resp.text}    7.0
+
+Test be -3 when x is -5 (ฺBefore Using Keywords)
+
+    ${resp}=     GET    http://127.0.0.1:5000/next2/-5
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    Should Be Equal  ${resp.text}    -3.0
+
+Test be 5.5 when x is 3.5 (ฺBefore Using Keywords)
+
+    ${resp}=     GET    http://127.0.0.1:5000/next2/3.5
+
+    # Verify the status code is 200 (OK)
+    Should Be Equal    ${resp.status_code}    ${200}
+
+    Should Be Equal  ${resp.text}    5.5
 >>>>>>> Stashed changes
